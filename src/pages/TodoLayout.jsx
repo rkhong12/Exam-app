@@ -160,7 +160,7 @@ function TodoLayout() {
         },
       });
     }
-  }, [todoState, userState]);
+  }, [todoState, userState.loggedInUser, userState.isLoggedIn]);
 
   const addTodo = useCallback(() => {
     if (!inputValue.trim()) return alert("내용을 입력하세요.");
