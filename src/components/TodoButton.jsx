@@ -8,6 +8,7 @@ function TodoButton({ chkBtnTxt, todos, dispatch, isLoggedIn }) {
       dispatch({ type: "doneAll", payload: {} });
     } else {
       if (checked.length === 0) return alert("삭제할 항목을 선택하세요.");
+      if (!confirm("정말 삭제하시겠습니까?")) return;
       dispatch({ type: "delAll", payload: {} });
     }
   };

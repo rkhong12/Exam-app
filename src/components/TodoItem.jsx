@@ -23,7 +23,11 @@ function TodoItem({ todo, index, dispatch }) {
           <button
             type="button"
             className="btn btn-del"
-            onClick={() => dispatch({ type: "todoDelete", payload: index })}
+            onClick={() => {
+              if (confirm("정말 삭제하시겠습니까?")) {
+                dispatch({ type: "todoDelete", payload: index });
+              }
+            }}
           >
             삭제
           </button>
