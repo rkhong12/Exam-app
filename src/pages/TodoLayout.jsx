@@ -137,17 +137,6 @@ function TodoLayout() {
     todoDispatch,
   ]);
 
-  const updateTodosToUser = useCallback(() => {
-    if (!userState.loggedInUser) return;
-    userDispatch({
-      type: "updateUser",
-      payload: {
-        name: userState.loggedInUser.name,
-        todo: todoState,
-      },
-    });
-  }, [userState.loggedInUser, todoState]);
-
   useEffect(() => {
     if (!userState.isLoggedIn) return;
 
